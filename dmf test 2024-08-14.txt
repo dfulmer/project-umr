@@ -1,0 +1,19 @@
+rule "add UMR number to 099"
+priority 100
+when
+  (TRUE)
+then
+  copyField "001" to "TMZ.b"
+
+  addSubField "TMZ.a.UMR1" if ( exists "TMZ.b.99188039715706381" )
+
+  removeSubField "TMZ.b"
+end
+
+rule "change TMZ to 099"
+priority 60
+when
+  (TRUE)
+then
+  changeField "TMZ" to "099"
+end

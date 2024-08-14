@@ -1,0 +1,28 @@
+rule "add 490 and add UMR number to 490"
+priority 100
+when
+  (TRUE)
+then
+  addField "TMY.{0, }.a.[University of Michigan technical reports] ; "
+  copyField "001" to "TMY.b"
+
+  addSubField "TMY.v.UMR1" if ( exists "TMY.b.99188039715706381" )
+
+  removeSubField "TMY.b"
+end
+
+rule "change TMY to 490"
+priority 60
+when
+  (TRUE)
+then
+  changeField "TMY" to "490"
+end
+
+rule "combine 490"
+priority 59
+when
+  (TRUE)
+then
+  combineFields "490" excluding ""
+end

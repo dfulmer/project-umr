@@ -1,0 +1,19 @@
+rule "add barcode"
+priority 100
+when
+  (TRUE)
+then
+  copyField "001" to "TMU.b"
+
+  addSubField "TMU.p.123" if ( exists "TMU.b.99188039715706381" )
+
+  removeSubField "TMU.b"
+end
+
+rule "change TMU to 955"
+priority 60
+when
+  (TRUE)
+then
+  changeField "TMU" to "955"
+end

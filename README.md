@@ -11,3 +11,16 @@ cd into python-cli
 ## dmf test 2024-08-12.txt
 This was an early draft of the normalization rule.
 
+## dmf test 2024-08-14.txt
+This rule adds a 099 $a based on a list of MMS IDs and correspoding UMR numbers.  
+
+This line will need to be replaced with a list of addSubField commands that have the contents of the 099 $a (replace 'UMR1') and the corresponding MMS ID (replace '99188039715706381'):
+
+addSubField "TMZ.a.UMR1" if ( exists "TMZ.b.99188039715706381" )
+
+## dmf test 2024-08-14-2.txt
+This rule adds a 490. This line will need to be replaced with a list of addSubField commands with 'UMR1' and '99188039715706381' replaced with corresponding UMR numbers and MMS IDs.
+
+## dmf test 2024-08-14-3.txt
+This rule adds barcode numbers. Replace 123 with barcodes and 99188039715706381 with MMS IDs.
+
