@@ -1,0 +1,196 @@
+rule "Every field except LDR, 008, 040, 042, 245, 260, 653, 720"
+priority 100
+when
+  (TRUE)
+then
+  removeControlField "001"
+  removeControlField "002"
+  removeControlField "003"
+  removeControlField "004"
+  removeControlField "005"
+  removeControlField "006"
+  removeControlField "007"
+  removeControlField "009"
+  removeField "01*"
+  removeField "02*"
+  removeField "03*"
+  removeField "041"
+  removeField "043"
+  removeField "044"
+  removeField "045"
+  removeField "046"
+  removeField "047"
+  removeField "048"
+  removeField "049"
+  removeField "05*"
+  removeField "06*"
+  removeField "07*"
+  removeField "08*"
+  removeField "09*"
+  removeField "1*"
+  removeField "20*"
+  removeField "21*"
+  removeField "22*"
+  removeField "23*"
+  removeField "240"
+  removeField "241"
+  removeField "242"
+  removeField "243"
+  removeField "244"
+  removeField "246"
+  removeField "247"
+  removeField "248"
+  removeField "249"
+  removeField "25*"
+  removeField "261"
+  removeField "262"
+  removeField "263"
+  removeField "264"
+  removeField "265"
+  removeField "266"
+  removeField "267"
+  removeField "268"
+  removeField "269"
+  removeField "27*"
+  removeField "28*"
+  removeField "29*"
+  removeField "3*"
+  removeField "4*"
+  removeField "5*"
+  removeField "60*"
+  removeField "61*"
+  removeField "62*"
+  removeField "63*"
+  removeField "64*"
+  removeField "650"
+  removeField "651"
+  removeField "652"
+  removeField "654"
+  removeField "655"
+  removeField "656"
+  removeField "657"
+  removeField "658"
+  removeField "659"
+  removeField "66*"
+  removeField "67*"
+  removeField "68*"
+  removeField "69*"
+  removeField "70*"
+  removeField "71*"
+  removeField "721"
+  removeField "722"
+  removeField "723"
+  removeField "724"
+  removeField "725"
+  removeField "726"
+  removeField "727"
+  removeField "728"
+  removeField "729"
+  removeField "73*"
+  removeField "74*"
+  removeField "75*"
+  removeField "76*"
+  removeField "77*"
+  removeField "78*"
+  removeField "79*"
+  removeField "8*"
+  removeField "9*"
+end
+
+rule "Change 008 position 23 to #"
+priority 90
+when
+  (TRUE)
+then
+  replaceControlContents "008.{23,1}" with "#"
+end
+
+rule "Change LDR"
+priority 80
+when
+  (TRUE)
+then
+  replaceControlContents "LDR.{6,1}" with "a"
+  replaceControlContents "LDR.{7,1}" with "b"
+  replaceControlContents "LDR.{17,1}" with "3"
+end
+
+
+
+rule "add 336"
+priority 70
+when
+  (TRUE)
+then
+  addField "TMP.{-,-}.a.text"
+  addSubField "TMP.b.txt"
+  addSubField "TMP.2.rdacontent"
+end
+
+rule "change TMP to 336"
+when
+  (TRUE)
+then
+  changeField "TMP" to "336"
+end
+
+rule "add 300 field"
+priority 1
+when
+  (TRUE)
+then
+  addField "300.a.1 volume"
+end
+
+rule "add 2nd 336 field"
+priority 67
+when
+  (TRUE)
+then
+  addField "TMA.{-,-}.a.unmediated"
+  addSubField "TMA.b.n"
+  addSubField "TMA.2.rdamedia"
+end
+
+rule "change TMA to 2nd 336"
+priority 66
+when
+  (TRUE)
+then
+  changeField "TMA" to "336"
+end
+
+rule "add 337 field"
+priority 65
+when
+  (TRUE)
+then
+  addField "TMB.{-,-}.a.volume"
+  addSubField "TMB.b.nc"
+  addSubField "TMB.2.rdacontainer"
+end
+
+rule "change TMB to 337"
+priority 64
+when
+  (TRUE)
+then
+  changeField "TMB" to "337"
+end
+
+rule "add 490 field"
+priority 63
+when
+  (TRUE)
+then
+  addField "TMC.{0,-}.a.[University of Michigan technical reports] ;"
+  addSubField "TMC.v.[UMRxxxx]"
+end
+
+rule "change TMC to 490"
+priority 62
+when
+  (TRUE)
+then
+  changeField "TMC" to "490"
+end
