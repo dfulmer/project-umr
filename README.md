@@ -31,3 +31,7 @@ addSubField "TMU.p.123" if ( exists "TMU.b.99188039715706381" )
 ## createlist.py
 This script will create the customized lines. Run like this:  
 ```python3 createlist.py > out.txt```
+
+## To set up a rule
+Take dmf test 2024-08-14-3-4.txt and replace the three addSubField lines with blocks from the createlist.py script.
+
