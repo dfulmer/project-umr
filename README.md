@@ -21,6 +21,13 @@ addSubField "TMZ.a.UMR1" if ( exists "TMZ.b.99188039715706381" )
 ## dmf test 2024-08-14-2.txt
 This rule adds a 490. This line will need to be replaced with a list of addSubField commands with 'UMR1' and '99188039715706381' replaced with corresponding UMR numbers and MMS IDs.
 
+addSubField "TMY.v.UMR1" if ( exists "TMY.b.99188039715706381" )
+
 ## dmf test 2024-08-14-3.txt
 This rule adds barcode numbers. Replace 123 with barcodes and 99188039715706381 with MMS IDs.
 
+addSubField "TMU.p.123" if ( exists "TMU.b.99188039715706381" )
+
+## createlist.py
+This script will create the customized lines. Run like this:  
+```python3 createlist.py > out.txt```
