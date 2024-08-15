@@ -36,4 +36,4 @@ This script will create the customized lines. Run like this:
 Take dmf test 2024-08-14-3-4.txt and replace the three addSubField lines with blocks from the createlist.py script.
 
 ## Normalization rule size is 150k
-Normalization rules can be around
+Normalization rules can be around 2,237 lines long, depending on content.
