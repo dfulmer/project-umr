@@ -136,6 +136,7 @@ then
 end
 
 rule "change TMP to 336"
+priority 69
 when
   (TRUE)
 then
@@ -143,7 +144,7 @@ then
 end
 
 rule "add 300 field"
-priority 1
+priority 68
 when
   (TRUE)
 then
