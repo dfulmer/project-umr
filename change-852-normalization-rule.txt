@@ -1,0 +1,15 @@
+rule "Change first indicator of field 852 to 0"
+priority 10
+when
+  (TRUE)
+then
+  changeFirstIndicator "852" to "4" 
+end
+
+rule "Remove 852 $h"
+priority 5
+when
+  (TRUE)
+then
+  removeSubField "852.h"
+end
