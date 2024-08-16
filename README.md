@@ -37,3 +37,6 @@ Take dmf test 2024-08-14-3-4.txt and replace the three addSubField lines with bl
 
 ## Normalization rule size is 150k
 Normalization rules can be around 2,237 lines long, depending on content.
+
+## change-852-normalization-rule.txt
+This rule changes the 852 first indicator to 4 and removes the $h subfield.
