@@ -36,7 +36,7 @@ This script will create the customized lines and save them in a file called 'out
 Take dmf test 2024-08-14-3-4.txt and replace the three addSubField lines with blocks from the createlist.py script.
 
 ## Normalization rule size is 150k
-Normalization rules can be around 2,237 lines long, depending on content.
+Normalization rules can be around 2,237 lines long, depending on content. Specifically, they can be 150K in size, as of 2024-08-15.
 
 ## change-852-normalization-rule.txt
 This rule changes the 852 first indicator to 4 and removes the $h subfield.
