@@ -29,7 +29,7 @@ This rule adds barcode numbers. Replace 123 with barcodes and 99188039715706381 
 addSubField "TMU.p.123" if ( exists "TMU.b.99188039715706381" )
 
 ## createlist.py
-This script will create the customized lines. Run like this:  
+This script will create the customized lines and save them in a file called 'out.txt'. Run like this:  
 ```python3 createlist.py > out.txt```
 
 ## To set up a rule
